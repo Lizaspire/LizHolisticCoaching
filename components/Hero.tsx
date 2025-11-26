@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
+import heroImage from '@/assets/hero-coaching.jpg';
 
 interface HeroProps {
   onContactClick: () => void;
@@ -55,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
           <div className="mt-8 lg:mt-0 lg:col-span-6">
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="/images/hero-coaching.jpg"
+                src={heroImage}
                 alt="Enes coaching a client with personalised support"
                 className="w-full h-[350px] sm:h-[450px] lg:h-[550px] object-cover"
               />
