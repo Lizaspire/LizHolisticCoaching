@@ -5,7 +5,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: '/enes-holistic-coaching-v2/',
+    // Use a relative base so assets resolve correctly on GitHub Pages regardless of
+    // whether the site is served from the repository subpath or a custom domain.
+    base: './',
     server: {
       port: 3000,
     },
