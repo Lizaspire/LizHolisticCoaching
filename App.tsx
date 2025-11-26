@@ -13,8 +13,15 @@ import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { ClientLoginPage } from './components/ClientLoginPage';
 
 function App() {
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
+
+  if (pathname === '/client-login') {
+    return <ClientLoginPage />;
+  }
+
   const scrollToContact = () => {
     document.getElementById('free-chat')?.scrollIntoView({ behavior: 'smooth' });
   };

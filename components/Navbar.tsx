@@ -34,6 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
             <a href="#how-it-works" className="text-stone-600 hover:text-sage-700 transition-colors">How It Works</a>
             <a href="#is-this-4me" className="text-stone-600 hover:text-sage-700 transition-colors">Is This For Me?</a>
             <a href="#client-stories" className="text-stone-600 hover:text-sage-700 transition-colors">Client Stories</a>
+            <a href="/client-login" className="text-stone-600 hover:text-sage-700 transition-colors">Client Login</a>
             <Button onClick={onContactClick} variant="primary" className="px-5 py-2 text-sm">
               Free Consultation
             </Button>
@@ -61,6 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
             <a href="#how-it-works" className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>How It Works</a>
             <a href="#is-this-4me" className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>Is This For Me?</a>
             <a href="#client-stories" className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>Client Stories</a>
+            <a href="/client-login" className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>Client Login</a>
             <div className="px-3 py-2">
               <Button onClick={() => { onContactClick(); setIsMobileMenuOpen(false); }} className="w-full justify-center">
                 Free Consultation
