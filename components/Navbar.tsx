@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
-import logoImage from '../src/assets/enes-logo.png';
+import logoImage from '../src/assets/lm-logo.png';
 
 interface NavbarProps {
   onContactClick: () => void;

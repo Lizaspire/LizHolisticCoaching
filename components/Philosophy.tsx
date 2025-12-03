@@ -1,5 +1,5 @@
 import React from 'react';
-import enesImage from '../src/assets/meet-enes-gym.png';
+import enesImage from '../src/assets/founder-portrait.jpg';
 
 export const Philosophy: React.FC = () => {
   return (
