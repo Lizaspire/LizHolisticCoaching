@@ -8,9 +8,9 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {/* Column 1: Brand */}
           <div>
-            <h3 className="text-xl font-serif font-bold text-white mb-4">Enes Holistic Coaching</h3>
+            <h3 className="text-xl font-serif font-bold text-white mb-4">LM-Method</h3>
             <p className="text-sm leading-relaxed">
-              Personalised fitness, nutrition and mindset coaching with Enes.
+              Personalised fitness, nutrition and mindset coaching with Liz.
             </p>
           </div>
 
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
         {/* Copyright Line */}
         <div className="mt-12 pt-8 border-t border-stone-800 text-center">
           <p className="text-sm text-stone-400">
-            © 2025 Enes Holistic Coaching. All rights reserved.
+            © 2025 LM-Method. All rights reserved.
           </p>
         </div>
       </div>

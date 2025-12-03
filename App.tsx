@@ -7,7 +7,7 @@ import { WhatMakesDifferent } from './components/WhatMakesDifferent';
 import { IsThisForMe } from './components/IsThisForMe';
 import { HowItWorks } from './components/HowItWorks';
 import { WhyDifferent } from './components/WhyDifferent';
-import { MeetEnes } from './components/MeetEnes';
+import { MeetEnes as MeetLiz } from './components/MeetEnes';
 import { PlansAndPricing } from './components/PlansAndPricing';
 import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
@@ -83,7 +83,7 @@ function App() {
       <IsThisForMe />
       <HowItWorks />
       <WhyDifferent />
-      <MeetEnes />
+      <MeetLiz />
       <PlansAndPricing />
       <Testimonials />
       <FAQ />

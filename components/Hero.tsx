@@ -35,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
 
             {/* Main Paragraph */}
             <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl">
-              I'm Enes, and I work with people who feel intimidated by gyms, are managing injuries, have demanding schedules or are training later in life. You get one-to-one support shaped entirely around your real circumstances, not a modified template.
+              I'm Liz, and I work with people who feel intimidated by gyms, are managing injuries, have demanding schedules or are training later in life. You get one-to-one support shaped entirely around your real circumstances, not a modified template.
             </p>
 
             {/* CTAs */}
@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
                 src={heroImage}
-                alt="Enes coaching a client with personalised support"
+                alt="Liz coaching a client with personalised support"
                 className="w-full h-[350px] sm:h-[450px] lg:h-[550px] object-cover"
               />
             </div>

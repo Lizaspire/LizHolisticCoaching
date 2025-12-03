@@ -30,14 +30,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, clientLoginHref 
             onClick={() => onLogoClick?.()}
             className="flex items-center gap-3 focus:outline-none"
           >
-            <img src={logoImage} alt="Enes Holistic Coaching" className="h-12 w-auto" />
+            <img src={logoImage} alt="LM-Method" className="h-12 w-auto" />
             <span className={`text-xl font-serif font-bold tracking-tight ${isScrolled ? 'text-sage-900' : 'text-sage-900'}`}>
-              Enes Holistic Coaching
+              LM-Method
             </span>
           </button>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#meet-enes" className="text-stone-600 hover:text-sage-700 transition-colors">Meet Enes</a>
+            <a href="#meet-liz" className="text-stone-600 hover:text-sage-700 transition-colors">Meet Liz</a>
             <a href="#how-it-works" className="text-stone-600 hover:text-sage-700 transition-colors">How It Works</a>
             <a href="#is-this-4me" className="text-stone-600 hover:text-sage-700 transition-colors">Is This For Me?</a>
             <a href="#client-stories" className="text-stone-600 hover:text-sage-700 transition-colors">Client Stories</a>
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, clientLoginHref 
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-stone-100 absolute w-full">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#meet-enes" className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>Meet Enes</a>
+            <a href="#meet-liz" className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>Meet Liz</a>
             <a href="#how-it-works" className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>How It Works</a>
             <a href="#is-this-4me" className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>Is This For Me?</a>
             <a href="#client-stories" className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>Client Stories</a>
