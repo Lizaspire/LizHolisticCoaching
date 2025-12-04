@@ -12,7 +12,7 @@ export const WhyTerra: React.FC = () => {
         },
         {
             title: "Support that fits real life",
-            body: "Your plan adapts to busy London workdays, parenting, health conditions, and energy levels. Enes is there to help you adjust rather than judge you when life happens."
+            body: "Your plan adapts to busy London workdays, parenting, health conditions, and energy levels. Liz is there to help you adjust rather than judge you when life happens."
         }
     ];
 

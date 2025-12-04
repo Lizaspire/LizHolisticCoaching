@@ -1,7 +1,7 @@
 import React from 'react';
-import enesImage from '../src/assets/founder-portrait.jpg';
+import lizImage from '../src/assets/founder-portrait.jpg';
 
-export const MeetEnes: React.FC = () => {
+export const MeetLiz: React.FC = () => {
     return (
         <section id="meet-liz" className="py-16 lg:py-20 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,7 +10,7 @@ export const MeetEnes: React.FC = () => {
                     <div className="relative mb-8 lg:mb-0">
                         <div className="absolute inset-0 bg-sage-100 rounded-3xl transform -rotate-3 scale-105"></div>
                         <img
-                            src={enesImage}
+                            src={lizImage}
                             alt="Liz, your holistic coach, in a gym setting"
                             className="relative rounded-3xl shadow-xl w-full object-cover h-[350px] sm:h-[450px] lg:h-[550px]"
                         />

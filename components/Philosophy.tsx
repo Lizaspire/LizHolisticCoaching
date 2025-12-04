@@ -1,9 +1,9 @@
 import React from 'react';
-import enesImage from '../src/assets/founder-portrait.jpg';
+import lizImage from '../src/assets/founder-portrait.jpg';
 
 export const Philosophy: React.FC = () => {
   return (
-    <section id="meet-enes" className="py-16 lg:py-24 bg-white overflow-hidden">
+    <section id="meet-liz" className="py-16 lg:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Bio Section */}
@@ -12,8 +12,8 @@ export const Philosophy: React.FC = () => {
             <div className="absolute inset-0 bg-sage-100 rounded-3xl transform rotate-3 scale-105"></div>
             {/* Using a nature/fitness oriented image to match the 'farming/outdoor' vibe */}
             <img
-              src={enesImage}
-              alt="Enes - Holistic Trainer"
+              src={lizImage}
+              alt="Liz - Holistic Trainer"
               className="relative rounded-3xl shadow-xl w-full object-cover h-[350px] sm:h-[450px] lg:h-[600px] grayscale-0"
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-stone-100 max-w-xs hidden md:block">
@@ -22,14 +22,14 @@ export const Philosophy: React.FC = () => {
           </div>
 
           <div className="order-last lg:order-first">
-            <h2 className="text-base text-terracotta-600 font-semibold tracking-wide uppercase mb-3">Meet Enes</h2>
+            <h2 className="text-base text-terracotta-600 font-semibold tracking-wide uppercase mb-3">Meet Liz</h2>
             <h3 className="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-6 leading-tight">
               Not your typical London trainer.
             </h3>
 
             <div className="prose prose-lg text-stone-600 space-y-6">
               <p className="text-lg">
-                I’m Enes. My approach to fitness is shaped by a philosophy forged in the simple, hardworking traditions of <strong>Croatia</strong>.
+                I’m Liz. My approach to fitness is shaped by a philosophy forged in the simple, hardworking traditions of <strong>Croatia</strong>.
               </p>
 
               <div>

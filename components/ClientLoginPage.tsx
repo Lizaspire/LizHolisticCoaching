@@ -62,7 +62,7 @@ export const ClientLoginPage: React.FC<ClientLoginPageProps> = ({ onNavigateHome
                   {[
                     'Current phase: Week 4 of 12',
                     'Focus this week: Building confidence in the gym and protecting your knees',
-                    'Next check-in with Enes: Tuesday 7:30 pm (online call)'
+                    'Next check-in with Liz: Tuesday 7:30 pm (online call)'
                   ].map((item) => (
                     <div
                       key={item}
@@ -469,7 +469,7 @@ export const ClientLoginPage: React.FC<ClientLoginPageProps> = ({ onNavigateHome
           </div>
 
           <p className="text-stone-700 max-w-4xl">
-            Enes will review this with you during your check-ins and adjust your plan when needed.
+            Liz will review this with you during your check-ins and adjust your plan when needed.
           </p>
         </section>
       </main>

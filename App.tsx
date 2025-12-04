@@ -7,7 +7,7 @@ import { WhatMakesDifferent } from './components/WhatMakesDifferent';
 import { IsThisForMe } from './components/IsThisForMe';
 import { HowItWorks } from './components/HowItWorks';
 import { WhyDifferent } from './components/WhyDifferent';
-import { MeetEnes as MeetLiz } from './components/MeetEnes';
+import { MeetLiz } from './components/MeetLiz';
 import { PlansAndPricing } from './components/PlansAndPricing';
 import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';

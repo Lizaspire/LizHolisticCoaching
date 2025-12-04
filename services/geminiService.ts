@@ -6,12 +6,12 @@ export const getPersonalizedTip = async (goal: string, lifestyle: string): Promi
   try {
     const model = 'gemini-2.5-flash';
     const prompt = `
-      You are Enes, a warm, empathetic, and holistic personal trainer. 
+      You are Liz, a warm, empathetic, and holistic personal trainer. 
       A user has visited your website. They have the following goal: "${goal}" and describe their lifestyle as: "${lifestyle}".
       
       Provide a single, short (max 2 sentences), encouraging, and specific health or mindset tip for them. 
       Do not be generic. Be friendly and inviting. Emphasize that small steps matter.
-      Sign it off with "- Enes".
+      Sign it off with "- Liz".
     `;
 
     const response = await ai.models.generateContent({
@@ -19,14 +19,14 @@ export const getPersonalizedTip = async (goal: string, lifestyle: string): Promi
       contents: prompt,
     });
 
-    return response.text || "Remember, the journey of a thousand miles begins with a single step. Let's find what works for you. - Enes";
+    return response.text || "Remember, the journey of a thousand miles begins with a single step. Let's find what works for you. - Liz";
   } catch (error) {
     console.error("Error fetching tip:", error);
-    return "Every small step counts towards a healthier you. I'd love to discuss this more in person! - Enes";
+    return "Every small step counts towards a healthier you. I'd love to discuss this more in person! - Liz";
   }
 };
 
-export const generateEnesGymImage = async (base64Image: string): Promise<string | null> => {
+export const generateLizGymImage = async (base64Image: string): Promise<string | null> => {
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash-image',

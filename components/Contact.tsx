@@ -131,7 +131,7 @@ export const Contact: React.FC = () => {
             <input
               type="hidden"
               name="_subject"
-              value="New consultation request from Enes Holistic Coaching"
+              value="New consultation request from Liz Holistic Coaching"
             />
 
             {/* Submit Button */}

@@ -43,19 +43,19 @@ export const Testimonials: React.FC = () => {
     {
       name: "Sarah K.",
       role: "42, London – mother of two, desk job",
-      quote: "A plan that finally fits my impossible schedule. Before finding Enes, I thought having a demanding London job meant I simply had 'no time' to exercise. Generic workout plans felt overwhelming and quickly failed. Enes completely changed that. He didn't just give me a plan; he custom-built it around my impossible schedule and preference for home workouts. It's not 'out of the bag'—it's tailor-made. I'm finally seeing real results, and I actually feel less stressed. It's truly a personalised, affordable solution that fits my real life.",
+      quote: "A plan that finally fits my impossible schedule. Before finding Liz, I thought having a demanding London job meant I simply had 'no time' to exercise. Generic workout plans felt overwhelming and quickly failed. Liz completely changed that. She didn't just give me a plan; she custom-built it around my impossible schedule and preference for home workouts. It's not 'out of the bag'—it's tailor-made. I'm finally seeing real results, and I actually feel less stressed. It's truly a personalised, affordable solution that fits my real life.",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200"
     },
     {
       name: "Mark B.",
       role: "35, Buckinghamshire – gym regular, wanted to break a plateau",
-      quote: "After a year of no change, I started hitting new PBs. I was going to the gym 4-5 times a week for a year but was constantly frustrated because I wasn't seeing any changes. I needed a professional to take my journey to the 'next step.' Enes identified the missing pieces in my form, nutrition, and recovery almost immediately. His plan was tough, but every session felt purpose-driven and specific to my goals. The progress tracking is amazing, and I'm hitting PBs I never thought possible. A brilliant, affordable investment.",
+      quote: "After a year of no change, I started hitting new PBs. I was going to the gym 4-5 times a week for a year but was constantly frustrated because I wasn't seeing any changes. I needed a professional to take my journey to the 'next step.' Liz identified the missing pieces in my form, nutrition, and recovery almost immediately. Her plan was tough, but every session felt purpose-driven and specific to my goals. The progress tracking is amazing, and I'm hitting PBs I never thought possible. A brilliant, affordable investment.",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200"
     },
     {
       name: "Jessica T.",
       role: "28, online client – complete beginner with gym anxiety",
-      quote: "I went from terrified of gyms to feeling stronger and happier. I had never stepped foot in a gym and the whole process seemed terrifying. I needed support, not just an instruction manual. Enes offers a truly holistic approach to well-being. We started slow, focusing on core strength and mindfulness alongside my workouts. He's incredibly patient, non-judgmental, and genuinely passionate about my development. I've not only lost weight, but I feel stronger, more confident, and happier. This is the full package of support I needed.",
+      quote: "I went from terrified of gyms to feeling stronger and happier. I had never stepped foot in a gym and the whole process seemed terrifying. I needed support, not just an instruction manual. Liz offers a truly holistic approach to well-being. We started slow, focusing on core strength and mindfulness alongside my workouts. She's incredibly patient, non-judgmental, and genuinely passionate about my development. I've not only lost weight, but I feel stronger, more confident, and happier. This is the full package of support I needed.",
       image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=200&h=200"
     }
   ];
