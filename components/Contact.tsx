@@ -59,7 +59,7 @@ export const Contact: React.FC = () => {
             </div>
             <h3 className="text-lg font-medium text-sage-900">Message received!</h3>
             <p className="mt-2 text-stone-600">I personally read every message.</p>
-            <button onClick={() => setIsSubmitted(false)} className="mt-6 text-sm font-medium text-sage-600 hover:text-sage-500 underline">Send another message</button>
+            <button onClick={() => setIsSubmitted(false)} className="mt-6 text-sm font-medium text-[#14b2ad] hover:text-[#12a09b] underline">Send another message</button>
           </div>
         ) : (
           <form

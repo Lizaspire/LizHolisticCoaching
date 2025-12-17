@@ -27,12 +27,12 @@ export const AIWellnessCheck: React.FC = () => {
               <p className="text-stone-300 mb-6">
                 Tell me a little about what you want to achieve, and I'll give you a free, instant tip to get you moving in the right direction right now.
               </p>
-              
+
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-stone-400 mb-1">Your Main Goal</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="e.g., Sleep better, lose 5kg, run a 5k"
                     value={goal}
                     onChange={(e) => setGoal(e.target.value)}
@@ -41,7 +41,7 @@ export const AIWellnessCheck: React.FC = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-stone-400 mb-1">Current Activity Level</label>
-                  <select 
+                  <select
                     value={lifestyle}
                     onChange={(e) => setLifestyle(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg bg-stone-700 border-stone-600 text-white focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-all"
@@ -52,10 +52,10 @@ export const AIWellnessCheck: React.FC = () => {
                     <option value="Recovering from Injury">Recovering from Injury</option>
                   </select>
                 </div>
-                <Button 
-                  onClick={handleGetTip} 
+                <Button
+                  onClick={handleGetTip}
                   disabled={loading || !goal}
-                  className="w-full bg-sage-600 hover:bg-sage-500 text-white mt-4"
+                  className="w-full bg-[#14b2ad] hover:bg-[#12a09b] text-white mt-4"
                 >
                   {loading ? 'Thinking...' : 'Get My Personal Tip'}
                 </Button>

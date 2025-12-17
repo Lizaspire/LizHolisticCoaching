@@ -158,7 +158,7 @@ export const ClientLoginPage: React.FC<ClientLoginPageProps> = ({ onNavigateHome
               </div>
               <button
                 onClick={() => scrollToSection('workout-programme')}
-                className="mt-6 inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-sage-600 hover:bg-sage-700 rounded-lg transition-colors"
+                className="mt-6 inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-[#14b2ad] hover:bg-[#12a09b] rounded-lg transition-colors"
               >
                 View full workout programme
               </button>
@@ -193,7 +193,7 @@ export const ClientLoginPage: React.FC<ClientLoginPageProps> = ({ onNavigateHome
               </div>
               <button
                 onClick={() => scrollToSection('nutrition-plan')}
-                className="mt-6 inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-sage-600 hover:bg-sage-700 rounded-lg transition-colors"
+                className="mt-6 inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-[#14b2ad] hover:bg-[#12a09b] rounded-lg transition-colors"
               >
                 View full nutrition and supplements plan
               </button>
@@ -220,7 +220,7 @@ export const ClientLoginPage: React.FC<ClientLoginPageProps> = ({ onNavigateHome
               <p className="mt-4 italic text-sage-800">“Small consistent steps change more than one big push.”</p>
               <button
                 onClick={() => scrollToSection('mindfulness-programme')}
-                className="mt-6 inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-sage-600 hover:bg-sage-700 rounded-lg transition-colors"
+                className="mt-6 inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-[#14b2ad] hover:bg-[#12a09b] rounded-lg transition-colors"
               >
                 View full mindfulness programme
               </button>

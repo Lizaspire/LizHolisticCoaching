@@ -45,7 +45,7 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               </Button>
               <button
                 onClick={scrollToHowItWorks}
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-sage-600 text-base sm:text-lg font-semibold rounded-full text-sage-700 bg-transparent hover:bg-sage-50 transition-all duration-300"
+                className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#14b2ad] text-base sm:text-lg font-semibold rounded-full text-[#14b2ad] bg-transparent hover:bg-[#14b2ad]/10 transition-all duration-300"
               >
                 How My Coaching Works
               </button>
