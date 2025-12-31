@@ -6,12 +6,9 @@
 
 A personalised fitness and nutrition coaching website built with React, TypeScript, and Vite.
 
-**Live Site:** https://dallylee.github.io/liz-holistic-coaching
-
-View your app in AI Studio: https://ai.studio/apps/drive/
-
-
 
 ## Deployment
 
 This site is automatically deployed to GitHub Pages via GitHub Actions on every push to the `main` branch. The workflow builds the Vite app and deploys the `dist` folder to GitHub Pages.
+
+Studio Dali 2025
