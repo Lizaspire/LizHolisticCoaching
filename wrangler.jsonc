@@ -1,5 +1,5 @@
-{
-  "name": "liz-holistic-coaching",
+// wrangler.jsonc
+"name": "lizholisticcoaching",
   "compatibility_date": "2025-12-31",
   "assets": {
     "directory": "./dist"
