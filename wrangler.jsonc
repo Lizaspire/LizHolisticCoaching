@@ -1,6 +1,10 @@
 {
   "name": "lizholisticcoaching",
-  "compatibility_date": "2024-04-01",
-  "workers_dev": true,
-  "preview_urls": true
+  "compatibility_date": "2025-12-31",
+  "assets": {
+    "directory": "./dist"
+  },
+  "observability": {
+    "enabled": true
+  }
 }
