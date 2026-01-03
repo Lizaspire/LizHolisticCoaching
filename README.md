@@ -1,52 +1,39 @@
-🌿 LM Method — Official Website Repository
+# LM Method — Official Website Repository
 
 Live website:
-🔗 https://lm-method.co.uk
+- https://lm-method.co.uk
+- https://www.lm-method.co.uk
 
-🔗 https://www.lm-method.co.uk
+---
 
-📌 What this repository is
+## What this repository is
 
 This repository contains the source code for the LM Method website.
 
-It is the single source of truth for how the website looks, behaves, and is deployed.
+It is the single source of truth for how the website looks, behaves, and is deployed.  
 All production updates originate here.
 
-🚀 How deployment works
+---
+
+## How deployment works
 
 The website is deployed automatically using Cloudflare Pages.
 
-Deployment flow:
-
-Developer changes
+```text
+Developer (local changes)
         ↓
-     GitHub
+GitHub (source code repository)
         ↓
- Cloudflare Pages
+Cloudflare Pages (build and deploy)
         ↓
-   Live Website
+Live website
+  https://lm-method.co.uk
+  https://www.lm-method.co.uk
 
-<div align="center">
-<img width="600" height="475" alt="GHBanner" src="/docs/website-workflow.png" />
-</div>
+There is no manual upload or FTP process.
+All production changes must go through this repository.
 
-/docs/website-workflow.png
-
-A developer makes changes locally
-
-Changes are committed and pushed to GitHub
-
-Cloudflare Pages:
-
-Detects the update
-
-Builds the site
-
-Deploys it live automatically
-
-⚠️ There is no manual upload or FTP process.
-
-🧠 Who should edit this repository
+Who should edit this repository
 
 This repository should only be edited by:
 
@@ -56,40 +43,59 @@ A contractor making agreed layout, design, or structural changes
 
 If you are not confident with Git or web development tools, do not edit files directly.
 
-Non-technical content updates (for example events or schedules) are handled through a separate, simplified workflow where available.
+Important rules
 
-🛑 Important rules (please read)
+Do not delete this repository
 
-❌ Do not delete this repository
-❌ Do not rename core folders or config files
-❌ Do not force-push or rewrite Git history
-❌ Do not commit secrets or passwords
+Do not rename core folders or configuration files
 
-✅ Keep commits small and clearly described
-✅ Test changes locally before pushing
-✅ Treat this as a live production system
+Do not force-push or rewrite Git history
+
+Do not commit secrets, credentials, or recovery data
+
+Best practices:
+
+Keep commits small and clearly described
+
+Test changes locally before pushing
+
+Treat this as a live production system
 
 Breaking changes here can cause the website to fail deployment.
 
-🌿 Branching and updates
+Branching and updates
 
-main → live production website
+main represents the live production website
 
 Significant changes should ideally be reviewed before merging
 
 Minor updates may be committed directly if agreed in advance
 
-🧩 Services used (at a glance)
-Service	Purpose
-GitHub	Source code and version control
-Cloudflare Pages	Hosting, builds, and deployment
-IONOS	Domain registration and DNS management
+Non-technical content updates
+
+Some site content (for example events or schedules) may be designed to be updated outside of this repository.
+
+Where such workflows exist:
+
+Do not hard-code values that are intended to be externally managed
+
+Preserve existing data contracts
+
+Coordinate changes before altering structures or formats
+
+Services used (at a glance)
+
+GitHub: source code and version control
+
+Cloudflare Pages: hosting, builds, and deployment
+
+IONOS: domain registration and DNS management
 
 Each service has a distinct role. Changing or removing one can affect the site.
 
-🔐 Access and ownership
+Access and ownership
 
-This repository is owned by LM Method
+This repository is owned by the LM Method project.
 
 Access should be:
 
@@ -97,9 +103,9 @@ Granted only when necessary
 
 Removed once work is complete
 
-🚫 Credentials should never be committed to this repository.
+Credentials should never be committed to this repository.
 
-🛠 Future changes and support
+Future changes and support
 
 For:
 
@@ -109,11 +115,11 @@ New pages or features
 
 Performance or accessibility improvements
 
-Engage a developer experienced with GitHub + Cloudflare Pages.
+Engage a developer experienced with GitHub and Cloudflare Pages.
 
 If unsure, do not experiment on the live branch.
 
-✨ Final note
+Final note
 
 This setup is intentionally:
 
