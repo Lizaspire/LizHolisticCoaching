@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 coverage/
+
+# Local working files
+temp/
+all_files.txt
