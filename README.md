@@ -1,4 +1,4 @@
-# LM Method — Official Website Repository
+# LM Method Official Website Repository
 
 Live website:
 - https://lm-method.co.uk
@@ -8,128 +8,92 @@ Live website:
 
 ## What this repository is
 
-This repository contains the source code for the LM Method website.
-
-It is the single source of truth for how the website looks, behaves, and is deployed.  
-All production updates originate here.
+This repository contains the source code for the LM Method website. It is the single source of truth for production changes and deployment.
 
 ---
 
-## How deployment works
+## Deployment overview
 
-The website is deployed automatically using Cloudflare Pages.
+This site is deployed automatically via Cloudflare Pages.
+
+**Update path (high level):**  
+Developer changes → GitHub → Cloudflare Pages → Live website
+
+
+<summary><strong>Show the deployment flow diagram</strong></summary>
 
 ```text
-Developer (local changes)
-        ↓
-GitHub (source code repository)
-        ↓
-Cloudflare Pages (build and deploy)
-        ↓
+### Developer (local changes)
+   ↓
+GitHub (repository)
+   ↓
+Cloudflare Pages (build + deploy)
+   ↓
 Live website
-  https://lm-method.co.uk
-  https://www.lm-method.co.uk
-
-There is no manual upload or FTP process.
-All production changes must go through this repository.
-
+</details>
+Working rules for developers
 Who should edit this repository
 
-This repository should only be edited by:
+Developers familiar with GitHub and modern web workflows
 
-A developer familiar with GitHub and modern web workflows
-
-A contractor making agreed layout, design, or structural changes
+Contractors making agreed layout, design, or structural changes
 
 If you are not confident with Git or web development tools, do not edit files directly.
 
-Important rules
+Non-negotiables
 
 Do not delete this repository
 
-Do not rename core folders or configuration files
+Do not rename core folders or configuration files without a clear reason
 
 Do not force-push or rewrite Git history
 
 Do not commit secrets, credentials, or recovery data
 
-Best practices:
+Good practice
 
 Keep commits small and clearly described
 
 Test changes locally before pushing
 
-Treat this as a live production system
+Treat main as production
 
-Breaking changes here can cause the website to fail deployment.
+Branching
 
-Branching and updates
+main is production
 
-main represents the live production website
+Prefer a branch (and a pull request) for anything beyond a trivial change
 
-Significant changes should ideally be reviewed before merging
-
-Minor updates may be committed directly if agreed in advance
+Use direct commits to main only for small, agreed fixes
 
 Non-technical content updates
 
-Some site content (for example events or schedules) may be designed to be updated outside of this repository.
+Some content (for example events or schedules) may be managed outside this repository.
 
-Where such workflows exist:
+If an external content workflow exists:
 
-Do not hard-code values that are intended to be externally managed
+Do not hard-code values that are meant to be externally managed
 
 Preserve existing data contracts
 
-Coordinate changes before altering structures or formats
+Coordinate before altering formats, schemas, or file structures
 
-Services used (at a glance)
-
-GitHub: source code and version control
-
-Cloudflare Pages: hosting, builds, and deployment
-
-IONOS: domain registration and DNS management
+Services used
+Service	Role
+GitHub	Source code and version control
+Cloudflare Pages	Build and deploy hosting
+IONOS	Domain registration and DNS management
 
 Each service has a distinct role. Changing or removing one can affect the site.
 
 Access and ownership
 
-This repository is owned by the LM Method project.
+This repository is owned by the LM Method project. Access should be granted only when needed and removed once work is complete.
 
-Access should be:
+Support and future changes
 
-Granted only when necessary
+For design revisions, new pages/features, or performance and accessibility improvements, use a developer experienced with GitHub and Cloudflare Pages. Avoid experimenting directly on main.
 
-Removed once work is complete
+Notes
 
-Credentials should never be committed to this repository.
-
-Future changes and support
-
-For:
-
-Design revisions
-
-New pages or features
-
-Performance or accessibility improvements
-
-Engage a developer experienced with GitHub and Cloudflare Pages.
-
-If unsure, do not experiment on the live branch.
-
-Final note
-
-This setup is intentionally:
-
-Simple
-
-Reliable
-
-Secure
-
-Cost-effective
-
-Treat this repository with care.
-It represents the live public presence of the LM Method brand.
+This setup is intentionally simple, reliable, secure, and cost-effective. Handle with care as it represents the public LM Method website.
