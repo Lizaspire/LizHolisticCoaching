@@ -35,7 +35,7 @@ export const HowItWorks: React.FC = () => {
                 {/* Steps */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {steps.map((step, index) => (
-                        <div key={index} className="bg-white rounded-3xl border border-sage-100 p-8 lg:p-10 shadow-[0_10px_30px_-15px_rgba(167,185,169,0.3)] flex flex-col h-full transform transition-transform hover:-translate-y-1 duration-300">
+                        <div key={index} className="bg-white rounded-3xl border border-sage-100 p-8 lg:p-10 shadow-[0_20px_40px_-15px_rgba(167,185,169,0.3),0_0_20px_2px_rgba(167,185,169,0.1)] flex flex-col h-full transform transition-all hover:-translate-y-2 duration-300">
                             {/* Step Header */}
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-sage-600 text-white text-xl font-bold shrink-0">
