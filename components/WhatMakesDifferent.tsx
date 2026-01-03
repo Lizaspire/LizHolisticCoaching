@@ -15,7 +15,7 @@ export const WhatMakesDifferent: React.FC = () => {
             text: "Crave sweets – we build them in. Missed a week – that is life, not failure. No arbitrary rules, no \"starting over\". Sustainable change means working with your reality, not fighting it."
         },
         {
-            title: "Your personal dashboard",
+            title: "Your bespoke programme delivered through a specialised app",
             text: "Not just a PDF sent once. Log in daily to see today's workout, today's meals and today's mindfulness practice. Track progress, access your full programme and message me directly, all in one place."
         }
     ];

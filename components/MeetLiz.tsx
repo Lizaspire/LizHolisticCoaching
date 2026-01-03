@@ -36,7 +36,7 @@ export const MeetLiz: React.FC = () => {
                             </p>
 
                             <p>
-                                This coaching is my passion. I work with people who want to feel better in their bodies, whatever their age or starting point. If you want patient, personalised guidance without pressure or judgment, you are in the right place.
+                                I am passionate about educating my clients on the science of food and training, because knowledge brings confidence and empowerment. I work with people who want to feel better in their bodies, whatever their age or starting point. If you want patient, personalised guidance without pressure or judgment, you are in the right place.
                             </p>
                         </div>
 

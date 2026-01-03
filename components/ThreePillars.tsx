@@ -24,7 +24,7 @@ export const ThreePillars: React.FC = () => {
         },
         {
             title: "Mindfulness",
-            description: "Breath, mindset and self-talk that support your change instead of sabotaging it.",
+            description: "Ongoing mindset coaching that supports lasting change and helps you stay on track when most people self‑sabotage or stop at the first hurdle.",
             bullets: [
                 "Short daily breathing and grounding practices",
                 "Tools for stress, guilt and \"all or nothing\" thinking",

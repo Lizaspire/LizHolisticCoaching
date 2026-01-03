@@ -4,7 +4,7 @@ export const PlansAndPricing: React.FC = () => {
     const plans = [
         {
             title: "Personal Wellness Set-Up",
-            price: "£149 one-off",
+            price: "£249 per month",
             description: "A personalised 8–12 week plan created entirely around you.",
             features: [
                 "Free consultation call",
@@ -18,7 +18,7 @@ export const PlansAndPricing: React.FC = () => {
         },
         {
             title: "Coaching Membership Lite",
-            price: "£69 per month",
+            price: "£199 per month",
             description: "Monthly accountability and plan updates.",
             features: [
                 "Access to your personal dashboard",
@@ -30,7 +30,7 @@ export const PlansAndPricing: React.FC = () => {
         },
         {
             title: "Coaching Membership Plus",
-            price: "£109 per month",
+            price: "£299 per month",
             description: "Weekly feedback and closer support for bigger goals.",
             features: [
                 "Everything in Lite",
