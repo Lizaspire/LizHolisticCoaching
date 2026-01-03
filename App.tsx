@@ -13,26 +13,19 @@ import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { ClientLoginPage } from './components/ClientLoginPage';
 
 const getPathname = () => (typeof window !== 'undefined' ? window.location.pathname : '/');
 
 const getBaseRoot = () => {
   if (typeof window === 'undefined') return '/';
   const segments = window.location.pathname.split('/').filter(Boolean);
-  if (segments[segments.length - 1] === 'client-login') {
-    segments.pop();
-  }
-  if (segments.length === 0) {
-    return '/';
-  }
+  if (segments.length === 0) return '/';
   return `/${segments.join('/')}/`;
 };
 
 function App() {
   const [pathname, setPathname] = useState<string>(getPathname());
   const baseRoot = useMemo(() => getBaseRoot(), []);
-  const clientLoginPath = `${baseRoot}client-login`;
   const homePath = baseRoot;
 
   useEffect(() => {
@@ -54,26 +47,13 @@ function App() {
     document.getElementById('free-chat')?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
-  const isClientDashboard =
-    pathname === clientLoginPath ||
-    pathname.endsWith('/client-login') ||
-    pathname.endsWith('client-login/');
-
-  if (isClientDashboard) {
-    return (
-      <ClientLoginPage
-        onNavigateHome={() => navigateTo(homePath)}
-        onNavigateClientLogin={() => navigateTo(clientLoginPath)}
-      />
-    );
-  }
+  // Keep pathname state “used” intentionally; future routes (eg /events) will rely on it.
+  void pathname;
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar
         onContactClick={scrollToContact}
-        clientLoginHref={clientLoginPath}
-        onClientLoginNavigate={() => navigateTo(clientLoginPath)}
         onLogoClick={() => navigateTo(homePath)}
       />
       <Hero onContactClick={scrollToContact} />
