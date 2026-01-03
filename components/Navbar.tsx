@@ -5,9 +5,10 @@ import logoImage from '../src/assets/lm-logo.png';
 interface NavbarProps {
   onContactClick: () => void;
   onLogoClick?: () => void;
+  onEventsClick: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick, onEventsClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -21,9 +22,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick }) =
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -34,9 +34,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick }) =
           >
             <img src={logoImage} alt="LM-Method" className="h-12 w-auto" />
             <span
-              className={`text-xl font-serif font-bold tracking-tight ${
-                isScrolled ? 'text-sage-900' : 'text-sage-900'
-              }`}
+              className={`text-xl font-serif font-bold tracking-tight ${isScrolled ? 'text-sage-900' : 'text-sage-900'
+                }`}
             >
               LM-Method
             </span>
@@ -55,6 +54,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick }) =
             <a href="#client-stories" className="text-stone-600 hover:text-sage-700 transition-colors">
               Client Stories
             </a>
+            <button
+              onClick={onEventsClick}
+              className="text-stone-600 hover:text-sage-700 transition-colors font-medium"
+            >
+              Events & Updates
+            </button>
             <Button onClick={onContactClick} variant="primary" className="px-5 py-2 text-sm">
               Free Consultation
             </Button>
@@ -106,6 +111,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick }) =
             >
               Client Stories
             </a>
+            <button
+              className="w-full text-left block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md font-medium"
+              onClick={() => {
+                onEventsClick();
+                setIsMobileMenuOpen(false);
+              }}
+            >
+              Events & Updates
+            </button>
             <div className="px-3 py-2">
               <Button
                 onClick={() => {

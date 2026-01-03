@@ -14,12 +14,19 @@ import { FAQ } from './components/FAQ';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
+import { EventsPage } from './components/EventsPage';
+
 const getPathname = () => (typeof window !== 'undefined' ? window.location.pathname : '/');
 
 const getBaseRoot = () => {
   if (typeof window === 'undefined') return '/';
   const segments = window.location.pathname.split('/').filter(Boolean);
   if (segments.length === 0) return '/';
+  // If we are on /events, skip the last segment to find the root
+  if (segments[segments.length - 1] === 'events') {
+    const rootSegments = segments.slice(0, -1);
+    return rootSegments.length === 0 ? '/' : `/${rootSegments.join('/')}/`;
+  }
   return `/${segments.join('/')}/`;
 };
 
@@ -27,6 +34,10 @@ function App() {
   const [pathname, setPathname] = useState<string>(getPathname());
   const baseRoot = useMemo(() => getBaseRoot(), []);
   const homePath = baseRoot;
+  const eventsPath = useMemo(() => {
+    if (homePath === '/') return '/events';
+    return homePath + 'events';
+  }, [homePath]);
 
   useEffect(() => {
     const handlePopState = () => setPathname(getPathname());
@@ -47,27 +58,35 @@ function App() {
     document.getElementById('free-chat')?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
-  // Keep pathname state “used” intentionally; future routes (eg /events) will rely on it.
-  void pathname;
+  const isEventsPage = pathname === eventsPath;
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar
         onContactClick={scrollToContact}
         onLogoClick={() => navigateTo(homePath)}
+        onEventsClick={() => navigateTo(eventsPath)}
       />
-      <Hero onContactClick={scrollToContact} />
-      <TrustBadges />
-      <ThreePillars />
-      <WhatMakesDifferent />
-      <IsThisForMe />
-      <HowItWorks />
-      <WhyDifferent />
-      <MeetLiz />
-      <PlansAndPricing />
-      <Testimonials />
-      <FAQ />
-      <Contact />
+
+      {isEventsPage ? (
+        <EventsPage onBack={() => navigateTo(homePath)} />
+      ) : (
+        <>
+          <Hero onContactClick={scrollToContact} />
+          <TrustBadges />
+          <ThreePillars />
+          <WhatMakesDifferent />
+          <IsThisForMe />
+          <HowItWorks />
+          <WhyDifferent />
+          <MeetLiz />
+          <PlansAndPricing />
+          <Testimonials />
+          <FAQ />
+          <Contact />
+        </>
+      )}
+
       <Footer />
     </div>
   );
