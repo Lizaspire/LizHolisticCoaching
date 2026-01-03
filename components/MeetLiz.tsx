@@ -28,22 +28,25 @@ export const MeetLiz: React.FC = () => {
 
                         <div className="space-y-4 text-stone-600 leading-relaxed">
                             <p>
-                                I am Liz, the coach behind this programme. My approach to fitness is grounded in understanding that everyone's journey is unique, and real progress comes from sustainable habits tailored to your life.
+                                I am Liz, the coach behind this programme. My approach to fitness is grounded in understanding that everyone's journey is unique, and real progress comes from sustainable habits tailored to your life. I have worked internationally with clients from all walks of life. This enables me to understand well your individual needs, and to create plans to suit YOU.
                             </p>
 
                             <p>
-                                With years of experience in holistic coaching, my goal is to help you build habits you can actually maintain, whether you are nervous to start, rebuilding confidence or pushing for new fitness levels.
+                                I feel passionate about educating my clients about the science of food and training - with this knowledge comes empowerment. With years of experience in holistic coaching, my goal is to help you build habits you can actually maintain, whether you are nervous to start, rebuilding confidence or pushing for new fitness levels.
                             </p>
 
                             <p>
-                                I am passionate about educating my clients on the science of food and training, because knowledge brings confidence and empowerment. I work with people who want to feel better in their bodies, whatever their age or starting point. If you want patient, personalised guidance without pressure or judgment, you are in the right place.
+                                This coaching is my passion. I work with people who want to feel better in their bodies, whatever their age or starting point. If you want patient, personalised guidance without pressure or judgment, you are in the right place.
                             </p>
                         </div>
 
                         {/* Quote Box */}
-                        <div className="mt-8 bg-sage-50 border-l-4 border-sage-600 p-6 rounded-r-xl">
+                        <div className="mt-8 bg-sage-50 border-l-4 border-sage-600 p-6 rounded-r-xl space-y-4">
                             <p className="font-serif text-lg italic text-sage-900">
-                                "Health is built like a garden, with care, consistency and patience."
+                                "Health is built like a flower, it takes care & daily nourishment."
+                            </p>
+                            <p className="font-serif text-lg italic text-sage-900">
+                                "Discipline is not self-torture; it is keeping a promise to yourself."
                             </p>
                         </div>
                     </div>

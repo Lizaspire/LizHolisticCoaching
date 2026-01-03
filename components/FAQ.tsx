@@ -26,7 +26,7 @@ export const FAQ: React.FC = () => {
         },
         {
             question: "Do you offer refunds?",
-            answer: "The £149 set-up fee is non-refundable once I begin building your plan. Monthly memberships can be cancelled at any time with 30 days' notice."
+            answer: "The set-up fee is non-refundable once I begin building your plan. Monthly memberships can be cancelled at any time with 30 days' notice."
         }
     ];
 

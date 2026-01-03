@@ -49,7 +49,7 @@ export const IsThisForMe: React.FC = () => {
             body: "For people who train regularly but feel stuck, plateaued or unsure how to progress.",
             bullets: [
                 "Form correction and technique coaching",
-                "Progressive overload plans",
+                "Progressive overload plans & bringing in new skills",
                 "Clear structure to reach new strength goals"
             ],
             icon: (
@@ -69,7 +69,7 @@ export const IsThisForMe: React.FC = () => {
                         Who I Work With
                     </h2>
                     <p className="mt-4 lg:mt-6 max-w-3xl mx-auto text-base sm:text-lg text-stone-600 leading-relaxed">
-                        My coaching is designed for people who want to feel stronger, more confident and more capable, without feeling judged or overwhelmed. Whatever your age, confidence level or physical ability, your plan is built around you.
+                        My coaching is designed for people who want to feel stronger, more confident and more capable, without feeling judged or overwhelmed. I am especially experienced in helping women feel strong, to coach through menopause & hormonal stages; and to bring in flexible nutrition to meet your changing needs. Whatever your age, confidence level or physical ability, your plan is built around you.
                     </p>
                 </div>
 

@@ -35,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
 
             {/* Main Paragraph */}
             <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl">
-              I'm Liz, and I work with people who feel intimidated by gyms, are managing injuries, have demanding schedules, or are over 40 and navigating challenging changes in their bodies. You get one-to-one support shaped entirely around your real circumstances, not a modified template.
+              I'm Liz, and I have over 20 years experience working as a PT & online coach. I work with people who feel intimidated by gyms, are managing injuries, have demanding schedules, or are over 40 and navigating challenging changes in their bodies. You get one-to-one support shaped entirely around your real circumstances, not a modified template.
             </p>
 
             {/* CTAs */}

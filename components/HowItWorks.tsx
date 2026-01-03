@@ -14,8 +14,8 @@ export const HowItWorks: React.FC = () => {
         },
         {
             number: "3",
-            title: "Your personal dashboard",
-            body: "You get login access to your own page with workouts, progress trackers, nutrition tools, mindfulness support and a direct button to ask me anything when you need help.\n\nYour initial plan covers 8–12 weeks. From there you can continue with monthly updates (Lite membership) or weekly support (Plus membership) to keep progressing."
+            title: "Your personalised programme",
+            body: "You get login access to the app with workouts, progress trackers, nutrition tools, mindfulness support and a direct button to ask me anything when you need help. Your initial plan covers 8–12 weeks. From there we can bring in new goals & continue to find the nutrition routine that works best for you."
         }
     ];
 
@@ -28,7 +28,7 @@ export const HowItWorks: React.FC = () => {
                         How It Works
                     </h2>
                     <p className="mt-4 lg:mt-6 max-w-3xl mx-auto text-base sm:text-lg text-stone-600 leading-relaxed">
-                        The process is straightforward. You talk to me, share your story and I build a practical, personalised plan that lives on your own private page inside the site.
+                        The process is straightforward. You talk to me, share your goals and where you are at, and I build a practical, personalised plan that is presented within the app. We can adjust each week to ensure that every aspect of the programme is working for you.
                     </p>
                 </div>
 
@@ -42,15 +42,19 @@ export const HowItWorks: React.FC = () => {
                             </div>
 
                             {/* Connector Line (desktop only) */}
-                            {index < steps.length - 1 && (
-                                <div className="hidden md:block absolute top-8 left-16 w-full h-0.5 bg-sage-200" style={{ width: 'calc(100% - 64px)' }}></div>
-                            )}
+                            <div
+                                className="hidden md:block absolute top-8 left-16 h-0.5 bg-sage-200"
+                                style={{
+                                    width: index < steps.length - 1 ? 'calc(100% - 64px)' : '40%',
+                                }}
+                            ></div>
 
                             {/* Content */}
                             <div className="text-center md:text-left">
                                 <h3 className="text-xl sm:text-2xl lg:text-[24px] font-semibold text-stone-900 mb-3 font-serif">
                                     {step.number}. {step.title}
                                 </h3>
+
                                 <p className="text-stone-600 leading-relaxed whitespace-pre-line">
                                     {step.body}
                                 </p>

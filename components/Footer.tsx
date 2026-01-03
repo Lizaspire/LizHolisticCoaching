@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
               <li>Personal Wellness Set-Up</li>
               <li>Coaching Membership Lite</li>
               <li>Coaching Membership Plus</li>
-              <li>In-person sessions in Buckinghamshire</li>
+              <li>In-person sessions in London</li>
             </ul>
           </div>
 
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-base font-semibold text-white mb-4">Location</h4>
             <p className="text-sm leading-relaxed mb-4">
-              Based in London & Buckinghamshire. Coaching clients online everywhere.
+              Based in London and Surrounds. Coaching clients online everywhere.
             </p>
             {/* Social Icons - Placeholder */}
             <div className="flex gap-4">

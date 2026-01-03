@@ -12,10 +12,10 @@ export const WhatMakesDifferent: React.FC = () => {
         },
         {
             title: "No guilt, no shame",
-            text: "Crave sweets – we build them in. Missed a week – that is life, not failure. No arbitrary rules, no \"starting over\". Sustainable change means working with your reality, not fighting it."
+            text: "Crave sweets – we build them in. Missed a week – that is life, not failure. We don’t do the all or nothing mindset at LM Method. No arbitrary rules, no \"starting over\". Sustainable change means working with your reality, not fighting it."
         },
         {
-            title: "Your bespoke programme delivered through a specialised app",
+            title: "Your bespoke programme and specialised app",
             text: "Not just a PDF sent once. Log in daily to see today's workout, today's meals and today's mindfulness practice. Track progress, access your full programme and message me directly, all in one place."
         }
     ];

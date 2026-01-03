@@ -4,15 +4,18 @@ export const PlansAndPricing: React.FC = () => {
     const plans = [
         {
             title: "Personal Wellness Set-Up",
-            price: "£249 per month",
+            price: "£249pm",
             description: "A personalised 8–12 week plan created entirely around you.",
             features: [
                 "Free consultation call",
                 "Detailed questionnaire & full review",
                 "Custom workout plan in your dashboard",
                 "Nutrition guidance & calorie/portion tools",
-                "Mindfulness and mindset exercises",
-                "Follow-up call in the first month"
+                "Mindfulness and mindset coaching",
+                "Weekly Check-in",
+                "24/7 chat support",
+                "Coaching from videos",
+                "Goal Setting & Coaching call each month."
             ],
             isPopular: false
         },
@@ -35,6 +38,7 @@ export const PlansAndPricing: React.FC = () => {
             features: [
                 "Everything in Lite",
                 "Weekly written check-ins",
+                "8 video check-ins & real time coaching per month.",
                 "Additional 15-min call each month",
                 "Priority message replies within 24 hours"
             ],
@@ -54,7 +58,7 @@ export const PlansAndPricing: React.FC = () => {
                         Every journey starts with a free chat. Transparent pricing, no hidden fees.
                     </p>
                     <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-stone-600">
-                        <strong>How it works:</strong> Start with the Personal Wellness Set-Up (£149 one-off). This creates your custom plan. Then choose ongoing support that fits your needs.
+                        <strong>How it works:</strong> After our Discovery Call, you can decide which plan works for you. Then I create your custom plan. The options are:
                     </p>
                 </div>
 
@@ -108,13 +112,13 @@ export const PlansAndPricing: React.FC = () => {
                 {/* In-Person Sessions Block */}
                 <div className="bg-stone-50 rounded-2xl p-6 lg:p-8 border border-stone-200">
                     <h3 className="text-xl sm:text-2xl font-semibold text-stone-900 mb-3 font-serif">
-                        In-person training (Buckinghamshire)
+                        In-person training
                     </h3>
                     <p className="text-stone-600 leading-relaxed mb-4">
                         60-minute sessions available locally, subject to availability.
                     </p>
                     <p className="text-lg font-semibold text-sage-700">
-                        From £45 per session. Block bookings available.
+                        From £70 per session. Block bookings available.
                     </p>
                 </div>
             </div>

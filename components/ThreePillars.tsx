@@ -8,7 +8,7 @@ export const ThreePillars: React.FC = () => {
             bullets: [
                 "Home or gym options, beginner to experienced",
                 "Modifications for pain, injuries and health conditions",
-                "Clear guidance on form, intensity and when to stop"
+                "Clear guidance on form, intensity and how to progress"
             ],
             shadowColor: "shadow-orange-200"
         },
@@ -18,17 +18,18 @@ export const ThreePillars: React.FC = () => {
             bullets: [
                 "Family meals with simple tweaks, not separate \"diet food\"",
                 "Allergies, preferences and culture fully respected",
-                "Sweets allowed, handled mindfully and without guilt"
+                "No restrictions, guilt or shame"
             ],
             shadowColor: "shadow-green-200"
         },
         {
             title: "Mindfulness",
-            description: "Ongoing mindset coaching that supports lasting change and helps you stay on track when most people self‑sabotage or stop at the first hurdle.",
+            description: "Breath, mindset and self-talk that support your change instead of sabotaging it.",
             bullets: [
                 "Short daily breathing and grounding practices",
                 "Tools for stress, guilt and \"all or nothing\" thinking",
-                "Reflection prompts that connect mind, food and movement"
+                "Reflection prompts that connect mind, food and movement",
+                "Ongoing mindset coaching to help you stay on track for your long term goals when most people self-sabotage or stop at the first hurdle."
             ],
             shadowColor: "shadow-blue-200"
         }
@@ -43,7 +44,7 @@ export const ThreePillars: React.FC = () => {
                         How This Works: Three Pillars, One Integrated Plan
                     </h2>
                     <p className="mt-4 lg:mt-6 max-w-3xl mx-auto text-base sm:text-lg text-stone-600 leading-relaxed">
-                        Most programmes focus on workouts alone. I build your plan on three pillars that work together, because your mental state affects your food choices, your stress affects recovery, and your body affects your confidence. You cannot separate them, so we do not.
+                        Most programmes focus on workouts alone. I build your plan on three pillars that work together, because your mental state affects your food choices, your stress affects recovery, and your body affects your confidence. You cannot separate them, so neither do I.
                     </p>
                 </div>
 
