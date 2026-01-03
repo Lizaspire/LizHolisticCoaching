@@ -26,6 +26,10 @@ Developer changes
         ↓
    Live Website
 
+<div align="center">
+<img width="600" height="475" alt="GHBanner" src="/docs/website-workflow.png" />
+</div>
+
 /docs/website-workflow.png
 
 A developer makes changes locally
