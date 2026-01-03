@@ -33,29 +33,25 @@ export const HowItWorks: React.FC = () => {
                 </div>
 
                 {/* Steps */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {steps.map((step, index) => (
-                        <div key={index} className="relative">
-                            {/* Step Number */}
-                            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-sage-600 text-white text-2xl font-bold mb-4 mx-auto md:mx-0">
-                                {step.number}
+                        <div key={index} className="bg-white rounded-3xl border border-sage-100 p-8 lg:p-10 shadow-[0_10px_30px_-15px_rgba(167,185,169,0.3)] flex flex-col h-full transform transition-transform hover:-translate-y-1 duration-300">
+                            {/* Step Header */}
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-sage-600 text-white text-xl font-bold shrink-0">
+                                    {step.number}
+                                </div>
+                                <h3 className="text-xl sm:text-2xl font-semibold text-stone-900 font-serif">
+                                    {step.title}
+                                </h3>
                             </div>
 
-                            {/* Connector Line (desktop only) */}
-                            <div
-                                className="hidden md:block absolute top-8 left-16 h-0.5 bg-sage-200"
-                                style={{
-                                    width: index < steps.length - 1 ? 'calc(100% - 64px)' : '40%',
-                                }}
-                            ></div>
+                            {/* Divider */}
+                            <div className="h-px w-full bg-sage-50 mb-8" />
 
-                            {/* Content */}
-                            <div className="text-center md:text-left">
-                                <h3 className="text-xl sm:text-2xl lg:text-[24px] font-semibold text-stone-900 mb-3 font-serif">
-                                    {step.number}. {step.title}
-                                </h3>
-
-                                <p className="text-stone-600 leading-relaxed whitespace-pre-line">
+                            {/* Body */}
+                            <div className="flex-1">
+                                <p className="text-stone-600 text-lg leading-relaxed whitespace-pre-line">
                                     {step.body}
                                 </p>
                             </div>

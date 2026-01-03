@@ -6,9 +6,10 @@ interface NavbarProps {
   onContactClick: () => void;
   onLogoClick?: () => void;
   onEventsClick: () => void;
+  onSectionNavigate?: (id: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick, onEventsClick }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick, onEventsClick, onSectionNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -19,6 +20,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick, onE
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (onSectionNavigate) {
+      e.preventDefault();
+      onSectionNavigate(id);
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   return (
     <nav
@@ -42,16 +51,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick, onE
           </button>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#meet-liz" className="text-stone-600 hover:text-sage-700 transition-colors">
+            <a
+              href="#meet-liz"
+              onClick={(e) => handleAnchorClick(e, 'meet-liz')}
+              className="text-stone-600 hover:text-sage-700 transition-colors"
+            >
               Meet Liz
             </a>
-            <a href="#how-it-works" className="text-stone-600 hover:text-sage-700 transition-colors">
+            <a
+              href="#how-it-works"
+              onClick={(e) => handleAnchorClick(e, 'how-it-works')}
+              className="text-stone-600 hover:text-sage-700 transition-colors"
+            >
               How It Works
             </a>
-            <a href="#is-this-4me" className="text-stone-600 hover:text-sage-700 transition-colors">
+            <a
+              href="#is-this-4me"
+              onClick={(e) => handleAnchorClick(e, 'is-this-4me')}
+              className="text-stone-600 hover:text-sage-700 transition-colors"
+            >
               Is This For Me?
             </a>
-            <a href="#client-stories" className="text-stone-600 hover:text-sage-700 transition-colors">
+            <a
+              href="#client-stories"
+              onClick={(e) => handleAnchorClick(e, 'client-stories')}
+              className="text-stone-600 hover:text-sage-700 transition-colors"
+            >
               Client Stories
             </a>
             <button
@@ -86,28 +111,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onLogoClick, onE
             <a
               href="#meet-liz"
               className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleAnchorClick(e, 'meet-liz')}
             >
               Meet Liz
             </a>
             <a
               href="#how-it-works"
               className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleAnchorClick(e, 'how-it-works')}
             >
               How It Works
             </a>
             <a
               href="#is-this-4me"
               className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleAnchorClick(e, 'is-this-4me')}
             >
               Is This For Me?
             </a>
             <a
               href="#client-stories"
               className="block px-3 py-2 text-stone-600 hover:text-sage-700 hover:bg-sage-50 rounded-md"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleAnchorClick(e, 'client-stories')}
             >
               Client Stories
             </a>

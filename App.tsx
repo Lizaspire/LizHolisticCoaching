@@ -39,8 +39,36 @@ function App() {
     return homePath + 'events';
   }, [homePath]);
 
+  // Handle direct loads with hash and navigation from other pages
   useEffect(() => {
-    const handlePopState = () => setPathname(getPathname());
+    const handleScrollToHash = () => {
+      if (typeof window === 'undefined') return;
+      const hash = window.location.hash;
+      if (hash && pathname === homePath) {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          // Use requestAnimationFrame loop or timeout to ensure content is fully rendered
+          const scroll = () => {
+            const el = document.getElementById(id);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }
+          };
+          requestAnimationFrame(scroll);
+          // Fallback timeout
+          setTimeout(scroll, 100);
+        }
+      }
+    };
+
+    handleScrollToHash();
+  }, [pathname, homePath]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setPathname(getPathname());
+    };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
@@ -50,9 +78,26 @@ function App() {
     if (window.location.pathname !== path) {
       window.history.pushState({}, '', path);
       setPathname(path);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Only scroll to top if there's no hash
+      if (!path.includes('#')) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
   }, []);
+
+  const handleSectionNavigate = useCallback((id: string) => {
+    const targetPath = homePath + '#' + id;
+    if (pathname !== homePath) {
+      window.history.pushState({}, '', targetPath);
+      setPathname(homePath);
+    } else {
+      // Already on home, just scroll
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      if (window.location.hash !== '#' + id) {
+        window.history.replaceState({}, '', targetPath);
+      }
+    }
+  }, [pathname, homePath]);
 
   const scrollToContact = useCallback(() => {
     document.getElementById('free-chat')?.scrollIntoView({ behavior: 'smooth' });
@@ -66,6 +111,7 @@ function App() {
         onContactClick={scrollToContact}
         onLogoClick={() => navigateTo(homePath)}
         onEventsClick={() => navigateTo(eventsPath)}
+        onSectionNavigate={handleSectionNavigate}
       />
 
       {isEventsPage ? (

@@ -9,27 +9,38 @@ export const onRequest: PagesFunction = async (context) => {
         });
     }
 
+    let normalizedTargetUrl = targetUrl.trim();
+    if (!/^https?:\/\//i.test(normalizedTargetUrl)) {
+        normalizedTargetUrl = `https://${normalizedTargetUrl}`;
+    }
+
     try {
-        const parsedUrl = new URL(targetUrl);
+        const parsedUrl = new URL(normalizedTargetUrl);
 
         // Basic security: block non-http(s)
         if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
-            return new Response(JSON.stringify({ error: 'Invalid protocol' }), { status: 400 });
+            return new Response(JSON.stringify({ image: null, error: 'Invalid protocol' }), {
+                headers: { 'Content-Type': 'application/json' }
+            });
         }
 
         // Basic security: block private IP ranges (simplified for Cloudflare env)
         const hostname = parsedUrl.hostname.toLowerCase();
         if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname.startsWith('192.168.') || hostname.startsWith('10.')) {
-            return new Response(JSON.stringify({ error: 'Invalid hostname' }), { status: 400 });
+            return new Response(JSON.stringify({ image: null, error: 'Invalid hostname' }), {
+                headers: { 'Content-Type': 'application/json' }
+            });
         }
 
-        const response = await fetch(targetUrl, {
+        const response = await fetch(normalizedTargetUrl, {
             headers: { 'User-Agent': 'Mozilla/5.0 (compatible; LizHolisticCoachingPreview/1.0)' },
             signal: AbortSignal.timeout(5000), // 5s timeout
         });
 
         if (!response.ok) {
-            return new Response(JSON.stringify({ error: 'Failed to fetch target URL' }), { status: 502 });
+            return new Response(JSON.stringify({ image: null, error: 'Failed to fetch target URL' }), {
+                headers: { 'Content-Type': 'application/json' }
+            });
         }
 
         // Limit fetch size to avoid OOM
@@ -64,8 +75,7 @@ export const onRequest: PagesFunction = async (context) => {
             },
         });
     } catch (error) {
-        return new Response(JSON.stringify({ error: 'Internal error: ' + error.message }), {
-            status: 500,
+        return new Response(JSON.stringify({ image: null, error: 'Internal error: ' + error.message }), {
             headers: { 'Content-Type': 'application/json' },
         });
     }

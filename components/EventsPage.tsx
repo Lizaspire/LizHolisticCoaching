@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from './Button';
+import logoImage from '../src/assets/lm-logo.png';
 
 interface EventData {
     title: string;
@@ -37,15 +38,16 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onBack }) => {
 
                 // Parallel Link Previews
                 const dataWithPreviews = await Promise.all(sortedData.map(async (event) => {
-                    if (!event.image_url && event.link) {
+                    const normalizedLink = normalizeUrl(event.link);
+                    if (!event.image_url && normalizedLink) {
                         try {
-                            const previewRes = await fetch(`/api/link-preview?url=${encodeURIComponent(event.link)}`);
+                            const previewRes = await fetch(`/api/link-preview?url=${encodeURIComponent(normalizedLink)}`);
                             if (previewRes.ok) {
                                 const meta = await previewRes.json();
                                 return { ...event, preview_image: meta.image };
                             }
                         } catch (e) {
-                            console.warn('Preview failed for', event.link);
+                            console.warn('Preview failed for', normalizedLink);
                         }
                     }
                     return { ...event, preview_image: null };
@@ -72,13 +74,20 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onBack }) => {
         return dateStr;
     };
 
+    const normalizeUrl = (url: string) => {
+        const trimmed = url.trim();
+        if (!trimmed) return '';
+        if (/^https?:\/\//i.test(trimmed)) return trimmed;
+        return `https://${trimmed}`;
+    };
+
     return (
         <div className="min-h-screen bg-stone-50 pt-24 pb-16 lg:pt-32 lg:pb-20">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                     <div>
                         <h1 className="text-4xl sm:text-5xl font-bold text-stone-900 font-serif leading-tight">Events & Updates</h1>
-                        <p className="mt-4 text-lg text-stone-600">The latest from Liz Holisic Coaching.</p>
+                        <p className="mt-4 text-lg text-stone-600">The latest from Liz Holistic Coaching.</p>
                     </div>
                     <button onClick={onBack} className="text-sage-700 font-medium hover:text-sage-800 transition-colors flex items-center group w-fit">
                         <svg className="w-5 h-5 mr-1 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
@@ -101,44 +110,49 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onBack }) => {
                     </div>
                 ) : (
                     <div className="space-y-12">
-                        {events.map((event, i) => (
-                            <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-stone-100 flex flex-col md:flex-row">
-                                {/* Image Section */}
-                                <div className="w-full md:w-2/5 h-64 md:h-auto overflow-hidden bg-stone-100 relative">
-                                    {(event.image_url || event.preview_image) ? (
-                                        <img
-                                            src={event.image_url || event.preview_image!}
-                                            alt={event.title}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    ) : (
-                                        <div className="absolute inset-0 flex items-center justify-center p-8 text-stone-300">
-                                            <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        {events.map((event, i) => {
+                            const hasImage = !!(event.image_url || event.preview_image);
+                            return (
+                                <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-stone-100 flex flex-col md:flex-row">
+                                    {/* Image Section */}
+                                    {hasImage && (
+                                        <div className="w-full md:w-2/5 h-64 md:h-auto overflow-hidden bg-stone-100 relative">
+                                            <img
+                                                src={event.image_url || event.preview_image!}
+                                                alt={event.title}
+                                                className="w-full h-full object-cover"
+                                            />
                                         </div>
                                     )}
-                                </div>
 
-                                {/* Content Section */}
-                                <div className="w-full md:w-3/5 p-8 lg:p-10 flex flex-col">
-                                    <div className="flex-1">
-                                        {event.date && (
-                                            <p className="text-sage-700 font-semibold tracking-wider text-sm uppercase mb-3">
-                                                {formatDate(event.date)}
-                                            </p>
-                                        )}
-                                        <h3 className="text-2xl sm:text-3xl font-bold text-stone-900 font-serif mb-4">{event.title}</h3>
-                                        <p className="text-stone-600 leading-relaxed text-lg mb-8 whitespace-pre-line">{event.description}</p>
+                                    {/* Content Section */}
+                                    <div className={`p-8 lg:p-10 flex flex-col ${hasImage ? 'w-full md:w-3/5' : 'w-full'}`}>
+                                        <div className="flex-1">
+                                            {event.date && (
+                                                <>
+                                                    <p className="text-stone-500 text-sm mb-3">
+                                                        {formatDate(event.date)}
+                                                    </p>
+                                                    <div className="h-px w-full bg-sage-100 mb-6" />
+                                                </>
+                                            )}
+                                            <h3 className="text-2xl sm:text-3xl font-bold text-stone-900 font-serif mb-4">{event.title}</h3>
+                                            <p className="text-stone-600 leading-relaxed text-lg mb-8 whitespace-pre-line">{event.description}</p>
+                                        </div>
+                                        <Button
+                                            variant="primary"
+                                            className="w-full md:w-max px-10 py-4 text-base justify-center"
+                                            onClick={() => {
+                                                const url = normalizeUrl(event.link);
+                                                if (url) window.open(url, '_blank', 'noopener,noreferrer');
+                                            }}
+                                        >
+                                            Details & Booking
+                                        </Button>
                                     </div>
-                                    <Button
-                                        variant="primary"
-                                        className="w-full md:w-max px-10 py-4 text-base justify-center"
-                                        onClick={() => window.open(event.link, '_blank')}
-                                    >
-                                        Details & Booking
-                                    </Button>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 )}
             </div>
